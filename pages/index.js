@@ -1,82 +1,58 @@
 import Head from 'next/head'
+import { useMoralis } from "react-moralis";
+// import Login from '../Components/Login';
+// import Register from './Register';
+import Image from 'next/image'
+// import { WarningTwoIcon } from '@chakra-ui/icons'
+import Login2 from '../Components/Login2'
+
+
 
 export default function Home() {
+  const {isAuthenticated, logout} = useMoralis()
+ 
+
+  if(!isAuthenticated) return <Login2 />
+ 
+  
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
+    // <div className="">
+      // <Head>
+      //   <title>Metaverse-chat</title>
+      //   <link rel="icon" href="/favicon.ico" />
+      // </Head>
+
+    //   <div className='bg-black relative '>
+    //         logged-in
+        
+    //     <div className='flex flex-col absolute z-50 h-4/6 w-full items-center justify-center'>
+    //         <Image className='rounded-full' src="https://avatars.githubusercontent.com/u/69717681?v=4" height={150} width={150}/>
+    //         {/* <button onClick={authenticate} className='bg-blue-500 rounded-lg p-3 animate-pulse mt-3'>Log in to metaverse</button> */}
+    //        <h2 className='font-bold text-[#000000]'>Welcome to Meta chat Mahi's Room</h2>
+    //         {/* <Link href="/Register"> */}
+    //         <button className='bg-blue-500 rounded-lg p-3 animate-pulse mt-3'>Enter into the metaverse</button>
+    //         {/* </Link> */}
+    //         <button className='flex items-center mt-2 text-red-600 animate-bounce' onClick={logout}>Logout  <WarningTwoIcon  w={15} h={15}/></button>
+           
+    //     </div>
+    //      <div className='w-full h-screen'>
+    //         <Image src="https://links.papareact.com/55n" layout='fill' objectFit='cover'/>
+    //      </div>
+
+           
+
+            
+    //     </div>
+    // </div>
+    <div>
+    <Head>
+        <title>Metaverse-chat</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+    {/* <h1>Welcome here</h1> */}
+    <button onClick={logout}>Log out</button>
     </div>
   )
+  
 }
