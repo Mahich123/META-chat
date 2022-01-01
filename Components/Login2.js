@@ -64,15 +64,15 @@ const Login = () => {
     const [password, setPassword] = useState()
 
     return (
-        <form class="flex flex-col items-center justify-center align=items">
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3">
-            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        <form className="flex flex-col items-center justify-center align=items">
+        <div className="md:flex md:items-center mb-6">
+          <div className="md:w-1/3">
+            <label className="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
               Full Name
             </label>
           </div>
-          <div class="md:w-2/3">
-            <input class="bg-[#2C272E]  appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none  focus:border-purple-500" id="inline-full-name" type="text" 
+          <div className="md:w-2/3">
+            <input className="bg-[#2C272E]  appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none  focus:border-purple-500" id="inline-full-name" type="text" 
               placeholder="Name"
               value={name} 
               onChange={(e) => setName(e.target.value)}
@@ -80,22 +80,22 @@ const Login = () => {
           </div>
         </div>
         <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3">
-            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+          <div classNale="md:w-1/3">
+            <label className="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
               Password
             </label>
           </div>
-          <div class="md:w-2/3">
-            <input class="bg-[#2C272E] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none focus:border-purple-500" id="inline-password" type="password" placeholder="******************"
+          <div className="md:w-2/3">
+            <input className="bg-[#2C272E] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-white leading-tight focus:outline-none focus:border-purple-500" id="inline-password" type="password" placeholder="******************"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
         </div>
        
-        <div class="md:flex md:items-center">
-          <div class="md:w-1/3"></div>
-          <div class="md:w-2/3">
+        <div className="md:flex md:items-center">
+          <div className="md:w-1/3"></div>
+          <div className="md:w-2/3">
             <button class="md:w-28 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded lg:w-24" type="button" 
             onClick={() => login(name,password)}
            >
